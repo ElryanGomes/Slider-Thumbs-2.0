@@ -1,0 +1,234 @@
+*{
+    margin: 0;
+    padding: 0;
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+}
+
+body{
+    overflow: hidden;
+}
+
+nav{
+    background: none;
+    position: relative;
+}
+
+nav ul{
+    display: flex;
+    flex-direction: row;
+    gap: 80px;
+    position: absolute;
+    left: 10%;
+    margin-top: 15px;
+    z-index: 2;
+}
+
+nav ul li{
+    list-style-type: none;
+    color: #eee;
+    font-size: 15px;
+    cursor: pointer;
+}
+
+nav ul li:hover{
+    color: #acaaaa;
+}
+
+.container{
+    height: 100vh;
+    width: 100vw;
+    overflow: hidden;
+}
+
+.list{
+    height: 100vh;
+    width: 100vh;
+    position: relative;
+}
+
+.list .list-item{
+    position: absolute;
+    left: 0;
+    top: 0;
+    z-index: 1;
+}
+
+.list .list-item img{
+    filter: brightness(30%);
+    object-fit: cover;
+    object-position: center;
+}
+
+.list .list-item .content{
+    position: absolute;
+    top: 150px;
+    left: 130px;
+    width: 600px;
+    height: auto;
+    z-index: 2;
+    color: #eee;
+}
+
+.list .list-item .content h1{
+    margin: 10px 0;
+}
+
+.list .list-item .content p{
+    font-size: 13px;
+    margin-bottom: 15px;
+}
+
+.list .list-item .content button{
+    width: 120px;
+    height: 30px;
+    border: none;
+    text-transform: uppercase;
+    font-size: 11px;
+    letter-spacing: 1px;
+    transition: 0.8s;
+    cursor: pointer;
+}
+
+.list .list-item .content button:nth-last-child(1){
+    background: none;
+    color: #eee;
+    border: 1px solid #eee;
+}
+
+.list .list-item .content button:nth-last-child(1):hover{
+    background: #eee;
+    color: #111;
+    border: none
+}
+
+.list .list-item .content button:nth-last-child(2):hover{
+    background: none;
+    color: #eee;
+    border: 1px solid #eee;
+}
+
+.thumbs{
+    display: flex;
+    flex-direction: row;
+    position: absolute;
+    left: 50%;
+    bottom: 3%;
+    z-index: 2;
+    gap: 15px;
+}
+
+.thumbs .thumb-items{
+    width: 110px;
+    height: 150px;
+    position: relative;
+}
+
+.thumbs .thumb-items img{
+    width: 100%;
+    height: 100%;
+    border-radius: 10px;
+    filter: brightness(80%);
+    transition: 0.5s;
+}
+.thumbs .thumb-items img:hover{
+    filter: brightness(95%); 
+}
+
+.thumbs .thumb-items .content p:nth-child(1){
+    position: absolute;
+    bottom: 23px;
+    left: 10px;
+    color: #eee;
+    font-weight: 600;
+    font-size: 14px;
+}
+
+.thumbs .thumb-items .content p:nth-child(2){
+    width: 80px;
+    height: 15px;
+    font-size: 13px;
+    position: absolute;
+    bottom: 8px;
+    left: 10px;
+    color: #eee;
+    cursor: pointer;
+}
+
+.container .buttons{
+    position: absolute;
+    left: 10%;
+    bottom: 8%;
+    z-index: 2; 
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+.container .buttons .next,
+.container .buttons .back{
+    width: 29px;
+    height: 35px;
+    background-color: #f1f1f13a;
+    border: none;
+    border-radius: 6px;
+    color: #eee;
+    font-weight: 600;
+    font-size: 12px;
+    cursor: pointer;
+    transition: 0.5s;
+}
+
+.container .buttons .next:hover,
+.container .buttons .back:hover{
+    background-color: #eeeeee96;
+    color: #111;
+}
+
+/* Movimento Cards */
+
+.container.next .thumb-items {
+    animation: effectMoveNext 0.5s linear 1 forwards
+}
+
+@keyframes effectMoveNext{
+    from {
+        transform: translateX(100px)
+    }
+}
+
+.container.back .thumb-items {
+    animation: effectMoveBack 0.5s linear 1 forwards
+}
+
+@keyframes effectMoveBack{
+    from {
+        transform: translateX(-70px)
+    }
+}
+
+/* Movimento do último card */
+
+.container.back .thumb-items:nth-last-child(1){
+    animation: MoveUltimoCard 0.5s linear 1 forwards
+}
+
+@keyframes MoveUltimoCard {
+    from{
+        width: 0;
+        opacity: 0;
+    }
+}
+
+/* Movimento do primeiro card
+
+.container.next .thumb-items:nth-last-child(1){
+    animation: MovePrimeiroCard 0.7s linear 1 forwards
+}
+
+@keyframes MovePrimeiroCard {
+    to{
+        width: 0;
+        opacity: 0;
+    }
+} */
+
