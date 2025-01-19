@@ -12,8 +12,6 @@ function moveCardOnClick(type) {
     let listItens = document.querySelectorAll('.list-item')
     let thumbItens = document.querySelectorAll('.thumb-items')
 
-    // console.log(thumbItens)
-
     if (type === 'next') {
         list.appendChild(listItens[0])
         thumbs.appendChild(thumbItens[0])
