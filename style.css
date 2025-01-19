@@ -218,17 +218,3 @@ nav ul li:hover{
         opacity: 0;
     }
 }
-
-/* Movimento do primeiro card
-
-.container.next .thumb-items:nth-last-child(1){
-    animation: MovePrimeiroCard 0.7s linear 1 forwards
-}
-
-@keyframes MovePrimeiroCard {
-    to{
-        width: 0;
-        opacity: 0;
-    }
-} */
-
